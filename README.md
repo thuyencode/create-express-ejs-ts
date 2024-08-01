@@ -1,8 +1,12 @@
-# A very basic NodeJS 🤝 TypeScript starter
+# Project: Mini Message Board
 
-A simple template to start a NodeJS and TypeScript project, based on my [Project: Basic Informational Site](https://github.com/thuyencode/nodejs-basic-informational-site-the-odin-project) for The Odin Project.
+[More detail information here](https://www.theodinproject.com/lessons/node-path-nodejs-mini-message-board).
 
-**Disclaimer:** This template doesn't include any tests (yet).
+|                                                                 Tech stack                                                                  |
+| :-----------------------------------------------------------------------------------------------------------------------------------------: |
+| [![tech stack](https://go-skill-icons.vercel.app/api/icons?i=nodejs,express,ts,html,css,picocss)](https://github.com/LelouchFR/skill-icons) |
+
+...and **[EJS](https://ejs.co)**.
 
 ## Getting started
 
