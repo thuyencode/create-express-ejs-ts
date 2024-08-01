@@ -20,3 +20,9 @@ app.use(undefined_routes_handler)
 
 // Error catcher
 app.use(error_handler)
+
+const PORT = process.env.PORT || 8080
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`)
+})
