@@ -18,7 +18,7 @@ main {
 }
 
 iconify-icon {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   vertical-align: middle;
 }
 
@@ -28,4 +28,16 @@ iconify-icon {
   justify-content: start;
   gap: 0.2rem;
   flex-wrap: wrap;
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 950px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 950px;
+  }
 }

@@ -6,18 +6,7 @@
     <title>New Message | Mini Message Board | The Odin Project</title>
   </head>
   <body class="container">
-    <header>
-      <nav>
-        <ul>
-          <li>Mini Message Board</li>
-        </ul>
-        <ul>
-          <li>
-            <a href="/"><button>Go Home</button></a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <%- include('components/header.ejs') %>
 
     <main>
       <form>
@@ -32,11 +21,18 @@
           </label>
           <label>
             <h5>Message</h5>
-            <input type="text" name="message" placeholder="Nvidia, FUCK YOU!" />
+            <input
+              type="text"
+              name="message"
+              placeholder="Example: Nvidia, FUCK YOU!"
+            />
           </label>
         </fieldset>
 
-        <button type="submit">Send new message</button>
+        <button type="submit">
+          Send new message
+          <iconify-icon icon="mdi:send"></iconify-icon>
+        </button>
       </form>
     </main>
 
