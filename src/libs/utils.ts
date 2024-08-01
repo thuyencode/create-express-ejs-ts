@@ -20,5 +20,5 @@ export function getPublicPath(fileName: string = '') {
  * @returns {string}
  */
 export function getViewsPath(fileName: string = '') {
-  return path.join(path.dirname(__dirname), 'views', fileName)
+  return path.join(__dirname, 'views', fileName)
 }
