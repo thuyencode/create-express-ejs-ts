@@ -1,5 +1,5 @@
+import __dirname from '@/__dirname'
 import path from 'path'
-import { __dirname } from './constants'
 
 /**
  * Get the path to the `public` folder or the files in it
