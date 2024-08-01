@@ -13,6 +13,9 @@
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "always",
       "source.organizeImports": "always"
+    },
+    "emmet.includeLanguages": {
+      "ejs": "html"
     }
   },
   "extensions": {
@@ -22,7 +25,8 @@
       "yoavbls.pretty-ts-errors",
       "christian-kohler.npm-intellisense",
       "antfu.iconify",
-      "formulahendry.auto-complete-tag"
+      "formulahendry.auto-complete-tag",
+      "digitalbrainstem.javascript-ejs-support"
     ]
   }
 }
