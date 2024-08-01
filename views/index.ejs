@@ -9,6 +9,12 @@
     <%- include('components/header.ejs') %>
 
     <main>
+      <% if (typeof messages === "undefined") { %>
+      <hgroup>
+        <h2>There're no messages</h2>
+        <p>Why don't you be the first one to break the silence? 💌</p>
+      </hgroup>
+      <% } else { %>
       <form aria-readonly="true" aria-disabled="true">
         <label>
           <h5>
@@ -26,6 +32,7 @@
           <small id="message-date"><%= new Date().toLocaleString() %></small>
         </label>
       </form>
+      <% } %>
     </main>
 
     <%- include('components/footer.ejs') %>
