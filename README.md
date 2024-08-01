@@ -2,6 +2,8 @@
 
 [More detail information here](https://www.theodinproject.com/lessons/node-path-nodejs-mini-message-board).
 
+https://github.com/user-attachments/assets/579ac575-96b0-469d-8e56-bf82a28d5c04
+
 |                                                                 Tech stack                                                                  |
 | :-----------------------------------------------------------------------------------------------------------------------------------------: |
 | [![tech stack](https://go-skill-icons.vercel.app/api/icons?i=nodejs,express,ts,html,css,picocss)](https://github.com/LelouchFR/skill-icons) |
