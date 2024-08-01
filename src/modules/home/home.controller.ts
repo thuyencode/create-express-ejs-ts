@@ -3,6 +3,7 @@ import type e from 'express'
 
 function homeController(req: e.Request, res: e.Response) {
   res.render('index', {
+    title: 'Home',
     navigation: {
       href: '/new',
       name: 'New Message',

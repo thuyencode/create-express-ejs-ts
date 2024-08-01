@@ -11,6 +11,7 @@ function error_handler(
   try {
     if (err instanceof NotFound) {
       res.status(err.statusCode).render('404', {
+        title: 'Not Found',
         navigation: {
           href: '/',
           name: 'Home',

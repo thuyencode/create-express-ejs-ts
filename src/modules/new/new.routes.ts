@@ -1,15 +1,8 @@
 import e from 'express'
+import newController from './new.controller'
 
 const new_routes = e.Router()
 
-new_routes.get('/new', (req, res) => {
-  res.render('new', {
-    navigation: {
-      href: '/',
-      name: 'Home',
-      icon_name: 'mdi:home'
-    }
-  })
-})
+new_routes.get('/new', newController)
 
 export default new_routes
