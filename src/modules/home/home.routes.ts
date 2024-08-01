@@ -1,8 +1,8 @@
 import e from 'express'
-import homeController from './home.controller'
+import { showHomePage } from './home.controller'
 
 const home_routes = e.Router()
 
-home_routes.get('/', homeController)
+home_routes.get('/', showHomePage)
 
 export default home_routes

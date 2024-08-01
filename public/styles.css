@@ -1,3 +1,8 @@
+/* https://picocss.com/docs/colors */
+:root {
+  --pico-color-red-500: rgb(240, 96, 72);
+}
+
 html {
   font-family: 'Inter', sans-serif;
 }
@@ -28,6 +33,13 @@ iconify-icon {
   justify-content: start;
   gap: 0.2rem;
   flex-wrap: wrap;
+}
+
+.error-box {
+  color: var(--pico-color-red-500);
+  margin-bottom: calc(var(--pico-spacing) * 2);
+  text-align: center;
+  width: 100%;
 }
 
 @media (min-width: 1536px) {

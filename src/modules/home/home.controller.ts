@@ -1,7 +1,7 @@
 import { getMessages } from '@/db/messages'
 import type e from 'express'
 
-function homeController(req: e.Request, res: e.Response) {
+export function showHomePage(req: e.Request, res: e.Response) {
   res.render('index', {
     title: 'Home',
     navigation: {
@@ -12,5 +12,3 @@ function homeController(req: e.Request, res: e.Response) {
     messages: getMessages().length ? getMessages() : undefined
   })
 }
-
-export default homeController

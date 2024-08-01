@@ -10,10 +10,10 @@
       <form method="post" action="/new">
         <fieldset>
           <label>
-            <h5>Author</h5>
+            <h5>User</h5>
             <input
               type="text"
-              name="author"
+              name="user"
               placeholder="Example: Linus Torvalds"
               minlength="3"
             />
@@ -23,11 +23,15 @@
             <input
               type="text"
               name="message"
-              placeholder="Example: Nvidia, FUCK YOU!"
+              placeholder="Example: Nvidia, 🖕 YOU!"
               minlength="3"
             />
           </label>
         </fieldset>
+
+        <% if (typeof error !== "undefined") { %>
+        <div class="error-box"><%= error %></div>
+        <% } %>
 
         <button type="submit">
           Send new message
