@@ -1,5 +1,5 @@
 export type Message = {
-  userId: number
+  user_id: number
   text: string
   user: string
   added: Date

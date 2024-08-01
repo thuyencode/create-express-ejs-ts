@@ -1,25 +1,6 @@
 import type { Message } from '@/libs/types'
 
-const messages = new Map<number, Message>([
-  [
-    1,
-    {
-      userId: 1,
-      text: 'Hi there!',
-      user: 'Amando',
-      added: new Date()
-    }
-  ],
-  [
-    2,
-    {
-      userId: 2,
-      text: 'Hello World!',
-      user: 'Charles',
-      added: new Date()
-    }
-  ]
-])
+const messages = new Map<number, Message>()
 
 /**
  * Get all messages
@@ -49,11 +30,11 @@ export function getMessageById(id: number): Message | undefined {
  * @param {Omit<Message, 'userId'>} message
  * @returns {Message}
  */
-export function createMessage(message: Omit<Message, 'userId'>): Message {
-  const userId = messages.size + 1
-  const newMessage: Message = { userId, ...message }
+export function createMessage(message: Omit<Message, 'user_id'>): Message {
+  const user_id = messages.size + 1
+  const newMessage: Message = { ...message, user_id }
 
-  messages.set(userId, newMessage)
+  messages.set(user_id, newMessage)
 
   return newMessage
 }

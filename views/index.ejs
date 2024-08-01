@@ -15,26 +15,29 @@
         <p>Why don't you be the first one to break the silence? 💌</p>
       </hgroup>
       <% } else { %>
-      <form aria-readonly="true" aria-disabled="true">
-        <label>
+      <form aria-readonly="true">
+        <% for (const message of messages) { %>
+        <label data-user-id="<%= message.user_id %>">
           <h5>
             <span style="font-weight: 400">By</span>
-            First name
+            <%= message.user %>
           </h5>
           <input
             type="text"
             name="message"
-            placeholder="Message"
+            value="<%= message.text %>"
             aria-label="Message"
             aria-describedby="message-date"
             readonly
           />
-          <small id="message-date"><%= new Date().toLocaleString() %></small>
+          <small id="message-date">
+            Added at: <%= new Date(message.added).toLocaleString() %>
+          </small>
         </label>
+        <% } %>
       </form>
       <% } %>
     </main>
-
     <%- include('components/footer.ejs') %>
   </body>
 </html>
