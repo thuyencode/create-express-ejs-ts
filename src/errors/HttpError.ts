@@ -20,7 +20,6 @@ class HttpError extends Error {
   constructor(message: string, statusCode: HttpStatus) {
     super(message)
     this.statusCode = statusCode
-    this.message = message
   }
 }
 

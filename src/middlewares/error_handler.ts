@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { HttpError, InternalServerError } from '@/errors'
+import { HttpError, InternalServerError, NotFound } from '@/errors'
 import type e from 'express'
 
 function error_handler(
@@ -13,13 +13,17 @@ function error_handler(
       console.error(err)
     }
 
-    res.status(err.statusCode).json({
-      error: {
-        statusCode: err.statusCode,
-        message: err.message,
-        cause: err.cause
-      }
-    })
+    if (err instanceof NotFound) {
+      res.status(err.statusCode).render('404')
+    } else {
+      res.status(err.statusCode).json({
+        error: {
+          statusCode: err.statusCode,
+          message: err.message,
+          cause: err.cause
+        }
+      })
+    }
   } else {
     console.error(err)
   }
