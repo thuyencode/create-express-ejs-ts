@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home page | Mini Message Board | The Odin Project</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
-    />
-    <link rel="stylesheet" href="styles.css" />
+    <%- include('components/head.ejs') %>
+
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
   </head>
-  <body>
-    <h2>The date on the server side: <%= new Date().toDateString() %></h2>
+  <body class="container">
+    <header>Mini Message Board</header>
+
+    <main>
+      <form aria-readonly="true" aria-disabled="true">
+        <label>
+          <h5>
+            <span style="font-weight: 400">By</span>
+            First name
+          </h5>
+          <input
+            type="text"
+            name="message"
+            placeholder="Message"
+            aria-label="Message"
+            aria-describedby="message-date"
+            readonly
+          />
+          <small id="message-date"><%= new Date().toLocaleString() %></small>
+        </label>
+      </form>
+    </main>
+
+    <%- include('components/footer.ejs') %>
   </body>
 </html>
