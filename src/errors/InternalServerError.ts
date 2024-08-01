@@ -9,7 +9,7 @@ import HttpError from './HttpError.js'
  * @extends {HttpError}
  */
 class InternalServerError extends HttpError {
-  constructor(cause: Error | string) {
+  constructor(cause: Error | string | unknown) {
     super(
       httpStatusTextByCode(HttpStatus.INTERNAL_SERVER_ERROR),
       HttpStatus.INTERNAL_SERVER_ERROR
