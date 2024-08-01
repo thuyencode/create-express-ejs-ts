@@ -2,6 +2,7 @@ import e from 'express'
 import { getPublicPath, getViewsPath } from './libs/utils'
 import { error_handler, undefined_routes_handler } from './middlewares'
 import { home_routes } from './modules/home'
+import { new_routes } from './modules/new'
 
 const app = e()
 
@@ -17,7 +18,8 @@ app.use(e.urlencoded({ extended: true }))
 app.use(e.static(getPublicPath()))
 
 // Define routes
-app.use('/', home_routes)
+app.use(home_routes)
+app.use(new_routes)
 
 // Handle undefined routes
 app.use(undefined_routes_handler)

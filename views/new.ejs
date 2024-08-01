@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('components/head.ejs') %>
+
+    <title>New Message | Mini Message Board | The Odin Project</title>
+  </head>
+  <body class="container">
+    <header>
+      <nav>
+        <ul>
+          <li>Mini Message Board</li>
+        </ul>
+        <ul>
+          <li>
+            <a href="/"><button>Go Home</button></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <form>
+        <fieldset>
+          <label>
+            <h5>Author</h5>
+            <input
+              type="text"
+              name="author"
+              placeholder="Example: Linus Torvalds"
+            />
+          </label>
+          <label>
+            <h5>Message</h5>
+            <input type="text" name="message" placeholder="Nvidia, FUCK YOU!" />
+          </label>
+        </fieldset>
+
+        <button type="submit">Send new message</button>
+      </form>
+    </main>
+
+    <%- include('components/footer.ejs') %>
+  </body>
+</html>
