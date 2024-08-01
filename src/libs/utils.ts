@@ -9,7 +9,7 @@ import { __dirname } from './constants'
  * @returns {string}
  */
 export function getPublicPath(fileName: string = '') {
-  return path.join(path.dirname(__dirname), 'public', fileName)
+  return path.join(__dirname, 'public', fileName)
 }
 
 /**

@@ -11,7 +11,7 @@ app.set('views', getViewsPath())
 
 // Body parser middleware
 app.use(e.json())
-app.use(e.urlencoded({ extended: false }))
+app.use(e.urlencoded({ extended: true }))
 
 // Setup static folder
 app.use(e.static(getPublicPath()))
