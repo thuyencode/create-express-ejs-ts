@@ -1,7 +1,7 @@
 {
-  "name": "create-nodejs-typescript",
+  "name": "mini-message-board-the-odin-project",
   "version": "1.0.0",
-  "description": "A simple template to start a NodeJS and TypeScript project",
+  "description": "Project: Mini Message Board | The Odin Project",
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thuyencode/create-nodejs-typescript.git"
+    "url": "git+https://github.com/thuyencode/mini-message-board-the-odin-project.git"
   },
   "keywords": [
     "nodejs",
@@ -21,9 +21,9 @@
   "author": "Thuyen Code",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/thuyencode/create-nodejs-typescript/issues"
+    "url": "https://github.com/thuyencode/mini-message-board-the-odin-project/issues"
   },
-  "homepage": "https://github.com/thuyencode/create-nodejs-typescript#readme",
+  "homepage": "https://github.com/thuyencode/mini-message-board-the-odin-project#readme",
   "devDependencies": {
     "@eslint/js": "^9.8.0",
     "@types/eslint__js": "^8.42.3",
