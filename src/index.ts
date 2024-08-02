@@ -1,3 +1,4 @@
+import compression from 'compression'
 import e from 'express'
 import { getPublicPath, getViewsPath } from './libs/utils'
 import { error_handler, undefined_routes_handler } from './middlewares'
@@ -9,6 +10,9 @@ const app = e()
 // Setup EJS view
 app.set('view engine', 'ejs')
 app.set('views', getViewsPath())
+
+// Compression middleware
+app.use(compression())
 
 // Body parser middleware
 app.use(e.json())
