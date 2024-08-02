@@ -1,6 +1,8 @@
 import { createMessage } from '@/db/messages'
+import { MessageFormDataSchema } from '@/schemas/message.schema'
 import type e from 'express'
 import { HttpStatus } from 'http-status-ts'
+import * as v from 'valibot'
 
 export function showNewMessagePage(req: e.Request, res: e.Response) {
   res.render('new', {
@@ -14,45 +16,36 @@ export function showNewMessagePage(req: e.Request, res: e.Response) {
 }
 
 export function handleNewMessage(req: e.Request, res: e.Response) {
-  const submittedUser = (req.body.user as string) || undefined
-  const submittedMessage = (req.body.message as string) || undefined
+  try {
+    const submittedUser = req.body.user as string
+    const submittedText = req.body.message as string
 
-  let error: string | undefined
+    const submittedMessage = {
+      user: submittedUser,
+      text: submittedText
+    }
 
-  if (submittedUser === undefined || submittedUser.length <= 3) {
-    error = "'User' needs to be longer than 3 characters"
-  }
+    const newMessage = v.parse(MessageFormDataSchema, submittedMessage)
 
-  if (submittedMessage === undefined || submittedMessage.length <= 3) {
-    error = "'Message' needs to be longer than 3 characters"
-  }
-
-  if (
-    (submittedUser === undefined || submittedUser.length <= 3) &&
-    (submittedMessage === undefined || submittedMessage.length <= 3)
-  ) {
-    error = "Both 'User' and 'Message' need to be longer than 3 characters"
-  }
-
-  if (error === undefined) {
-    createMessage({
-      text: submittedMessage as string,
-      user: submittedUser as string,
-      added: new Date()
-    })
+    createMessage({ ...newMessage, added: new Date() })
 
     res.redirect('/')
+  } catch (error) {
+    if (v.isValiError(error)) {
+      const issues = v.flatten(error.issues).nested
 
-    return
-  }
-
-  res.status(HttpStatus.BAD_REQUEST).render('new', {
-    error,
-    title: 'New Message',
-    navigation: {
-      href: '/',
-      name: 'Home',
-      icon_name: 'mdi:home'
+      res.status(HttpStatus.BAD_REQUEST).render('new', {
+        error: {
+          user: issues!.user,
+          message: issues!.text
+        },
+        title: 'New Message',
+        navigation: {
+          href: '/',
+          name: 'Home',
+          icon_name: 'mdi:home'
+        }
+      })
     }
-  })
+  }
 }
