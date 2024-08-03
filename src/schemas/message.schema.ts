@@ -1,7 +1,7 @@
 import * as v from 'valibot'
 
 export const MessageFormDataSchema = v.object({
-  user: v.pipe(
+  username: v.pipe(
     v.string(),
     v.minLength(3, '"User" must be longer than 3 character')
   ),
