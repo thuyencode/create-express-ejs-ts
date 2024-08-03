@@ -7,8 +7,8 @@
     <%- include('components/header.ejs') %>
 
     <main>
-      <% const isUserError = typeof error !== "undefined" && typeof error.user
-      !== "undefined" %>
+      <% const isUserError = typeof error !== "undefined" && typeof
+      error.username !== "undefined" %>
       <!--  -->
       <% const isMessageError = typeof error !== "undefined" && typeof
       error.message !== "undefined" %>
@@ -19,14 +19,15 @@
             <h5>User</h5>
             <input
               type="text"
-              name="user"
+              name="username"
               placeholder="Example: Linus Torvalds"
               minlength="3"
               aria-invalid="<%= isUserError || '' %>"
               aria-describedby="invalid-user-helper"
+              required
             />
             <% if (isUserError) { %>
-            <small id="invalid-user-helper"><%= error.user %></small>
+            <small id="invalid-user-helper"><%= error.username %></small>
             <% } %>
           </label>
           <label>
@@ -38,6 +39,7 @@
               minlength="3"
               aria-invalid="<%= isMessageError || '' %>"
               aria-describedby="invalid-message-helper"
+              required
             />
             <% if (isMessageError) { %>
             <small id="invalid-message-helper"><%= error.message %></small>

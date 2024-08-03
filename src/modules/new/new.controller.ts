@@ -1,5 +1,8 @@
 import { createMessage } from '@/db/messages'
-import { MessageFormDataSchema } from '@/schemas/message.schema'
+import {
+  MessageFormDataSchema,
+  type MessageFormData
+} from '@/schemas/message.schema'
 import type e from 'express'
 import { HttpStatus } from 'http-status-ts'
 import * as v from 'valibot'
@@ -17,12 +20,12 @@ export function showNewMessagePage(req: e.Request, res: e.Response) {
 
 export function handleNewMessage(req: e.Request, res: e.Response) {
   try {
-    const submittedUser = req.body.user as string
-    const submittedText = req.body.message as string
+    const submittedUsername = (req.body.username || '') as string
+    const submittedText = (req.body.message || '') as string
 
-    const submittedMessage = {
-      user: submittedUser,
-      text: submittedText
+    const submittedMessage: MessageFormData = {
+      username: submittedUsername.trim(),
+      text: submittedText.trim()
     }
 
     const newMessage = v.parse(MessageFormDataSchema, submittedMessage)
@@ -36,7 +39,7 @@ export function handleNewMessage(req: e.Request, res: e.Response) {
 
       res.status(HttpStatus.BAD_REQUEST).render('new', {
         error: {
-          user: issues!.user,
+          username: issues!.username,
           message: issues!.text
         },
         title: 'New Message',
