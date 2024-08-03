@@ -2,7 +2,7 @@
 
 [More detail information here](https://www.theodinproject.com/lessons/node-path-nodejs-mini-message-board).
 
-https://github.com/user-attachments/assets/579ac575-96b0-469d-8e56-bf82a28d5c04
+https://github.com/user-attachments/assets/a8ac83b6-6833-4eb3-ac57-c55214e632b6
 
 |                                                                 Tech stack                                                                  |
 | :-----------------------------------------------------------------------------------------------------------------------------------------: |
