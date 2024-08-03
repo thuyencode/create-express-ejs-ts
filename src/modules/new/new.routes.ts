@@ -1,5 +1,5 @@
 import e from 'express'
-import { handleNewMessage, showNewMessagePage } from './new.controller'
+import { handleNewMessage, showNewMessagePage } from './new.controllers'
 
 const new_routes = e.Router()
 

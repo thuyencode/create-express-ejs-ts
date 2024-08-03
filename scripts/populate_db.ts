@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS
         id INT NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
         username VARCHAR(255) NOT NULL,
         text VARCHAR(255) NOT NULL,
-        added DATE
+        added TIMESTAMP
     );`
 
 async function main() {

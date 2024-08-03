@@ -15,7 +15,7 @@
       <% } else { %>
       <form aria-readonly="true">
         <% for (const message of messages) { %>
-        <label data-user-id="<%= message.user_id %>">
+        <label data-user-id="<%= message.id %>">
           <h5>
             <span style="font-weight: 400">By</span>
             <%= message.username %>

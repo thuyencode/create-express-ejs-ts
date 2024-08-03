@@ -1,11 +1,7 @@
-import { createMessage } from '@/db/messages'
-import {
-  MessageFormDataSchema,
-  type MessageFormData
-} from '@/schemas/message.schema'
 import type e from 'express'
 import { HttpStatus } from 'http-status-ts'
 import * as v from 'valibot'
+import { createMessage } from './new.services'
 
 export function showNewMessagePage(req: e.Request, res: e.Response) {
   res.render('new', {
@@ -23,14 +19,7 @@ export function handleNewMessage(req: e.Request, res: e.Response) {
     const submittedUsername = (req.body.username || '') as string
     const submittedText = (req.body.message || '') as string
 
-    const submittedMessage: MessageFormData = {
-      username: submittedUsername.trim(),
-      text: submittedText.trim()
-    }
-
-    const newMessage = v.parse(MessageFormDataSchema, submittedMessage)
-
-    createMessage({ ...newMessage, added: new Date() })
+    createMessage(submittedUsername, submittedText)
 
     res.redirect('/')
   } catch (error) {

@@ -1,5 +1,5 @@
 import e from 'express'
-import { showHomePage } from './home.controller'
+import { showHomePage } from './home.controllers'
 
 const home_routes = e.Router()
 
