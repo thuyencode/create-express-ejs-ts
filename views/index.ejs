@@ -6,36 +6,8 @@
   <body class="container">
     <%- include('components/header.ejs') %>
 
-    <main>
-      <% if (typeof messages === "undefined") { %>
-      <hgroup>
-        <h2>There're no messages</h2>
-        <p>Why don't you be the first one to break the silence? 💌</p>
-      </hgroup>
-      <% } else { %>
-      <form aria-readonly="true">
-        <% for (const message of messages) { %>
-        <label data-user-id="<%= message.id %>">
-          <h5>
-            <span style="font-weight: 400">By</span>
-            <%= message.username %>
-          </h5>
-          <input
-            type="text"
-            name="message"
-            value="<%= message.text %>"
-            aria-label="Message"
-            aria-describedby="message-date"
-            readonly
-          />
-          <small id="message-date">
-            Added at: <%= new Date(message.added).toLocaleString() %>
-          </small>
-        </label>
-        <% } %>
-      </form>
-      <% } %>
-    </main>
+    <h1>Hello World!</h1>
+
     <%- include('components/footer.ejs') %>
   </body>
 </html>

@@ -6,53 +6,7 @@
   <body class="container">
     <%- include('components/header.ejs') %>
 
-    <main>
-      <% const isUserError = typeof error !== "undefined" && typeof
-      error.username !== "undefined" %>
-      <!--  -->
-      <% const isMessageError = typeof error !== "undefined" && typeof
-      error.message !== "undefined" %>
-
-      <form method="post" action="/new">
-        <fieldset>
-          <label>
-            <h5>User</h5>
-            <input
-              type="text"
-              name="username"
-              placeholder="Example: Linus Torvalds"
-              minlength="3"
-              aria-invalid="<%= isUserError || '' %>"
-              aria-describedby="invalid-user-helper"
-              required
-            />
-            <% if (isUserError) { %>
-            <small id="invalid-user-helper"><%= error.username %></small>
-            <% } %>
-          </label>
-          <label>
-            <h5>Message</h5>
-            <input
-              type="text"
-              name="message"
-              placeholder="Example: Nvidia, 🖕 YOU!"
-              minlength="3"
-              aria-invalid="<%= isMessageError || '' %>"
-              aria-describedby="invalid-message-helper"
-              required
-            />
-            <% if (isMessageError) { %>
-            <small id="invalid-message-helper"><%= error.message %></small>
-            <% } %>
-          </label>
-        </fieldset>
-
-        <button type="submit">
-          Send new message
-          <iconify-icon icon="mdi:send"></iconify-icon>
-        </button>
-      </form>
-    </main>
+    <h1>Hello World!</h1>
 
     <%- include('components/footer.ejs') %>
   </body>
