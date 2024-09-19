@@ -1,5 +1,5 @@
 {
-  "name": "mini-message-board-the-odin-project",
+  "name": "create-express-ejs-ts",
   "version": "1.0.0",
   "description": "Create Express EJS app with TypeScript",
   "main": "src/index.ts",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thuyencode/mini-message-board-the-odin-project.git"
+    "url": "git+https://github.com/thuyencode/create-express-ejs-ts.git"
   },
   "keywords": [
     "nodejs",
@@ -23,9 +23,9 @@
   "author": "Thuyen Code",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/thuyencode/mini-message-board-the-odin-project/issues"
+    "url": "https://github.com/thuyencode/create-express-ejs-ts/issues"
   },
-  "homepage": "https://github.com/thuyencode/mini-message-board-the-odin-project#readme",
+  "homepage": "https://github.com/thuyencode/create-express-ejs-ts#readme",
   "devDependencies": {
     "@eslint/js": "^9.10.0",
     "@types/compression": "^1.7.5",
